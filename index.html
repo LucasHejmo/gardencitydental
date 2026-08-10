@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garden City Dental | Opening September 2026 — Brampton</title>
+  <meta name="description" content="Garden City Dental is opening September 2026 at 16 Main Street S, Brampton. New patients welcome — inquire today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-deep: #1B5E3B;
+      --green-dark: #0D2818;
+      --green-mid: #2A7D53;
+      --green-light: #D4E7DC;
+      --green-pale: #EDF5F0;
+      --sand: #E8D5B5;
+      --sand-light: #F3EBDD;
+      --bg: #FAFAF7;
+      --white: #FFFFFF;
+      --text: #2C3E35;
+      --text-light: #5A7265;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text); background: var(--bg);
+      line-height: 1.65; font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid rgba(27,94,59,0.08);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: 0 2px 20px rgba(13,40,24,0.06); }
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'Fraunces', serif;
+      font-weight: 700; font-size: 1.15rem;
+      color: var(--green-deep); text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-brand span { color: var(--green-mid); font-weight: 500; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-light);
+      font-size: 0.88rem; font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--green-deep); }
+    .nav-cta {
+      background: var(--green-deep) !important; color: var(--white) !important;
+      padding: 0.55rem 1.3rem !important; border-radius: 6px;
+      font-weight: 600 !important; transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; }
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      width: 28px; height: 20px; position: relative; z-index: 110;
+    }
+    .hamburger span {
+      display: block; width: 100%; height: 2px; background: var(--green-deep);
+      position: absolute; left: 0; transition: 0.3s;
+    }
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 9px; }
+    .hamburger span:nth-child(3) { top: 18px; }
+    .hamburger.open span:nth-child(1) { top: 9px; transform: rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
+
+    /* HERO */
+    .hero {
+      padding: 10rem 1.5rem 6rem; text-align: center;
+      position: relative; overflow: hidden;
+      background: linear-gradient(175deg, var(--green-pale) 0%, var(--bg) 55%);
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -60px; right: -120px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,125,83,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -80px; left: -100px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,213,181,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--white); border: 1px solid var(--green-light);
+      border-radius: 100px; padding: 0.4rem 1rem;
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--green-deep); margin-bottom: 2rem;
+      letter-spacing: 0.03em;
+    }
+    .hero-badge .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green-mid);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+    .hero-logo-placeholder {
+      width: 90px; height: 90px; margin: 0 auto 1.8rem;
+      border-radius: 20px; background: var(--white);
+      border: 2px dashed var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-light); font-size: 0.7rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', serif; font-weight: 700;
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem); line-height: 1.1;
+      color: var(--green-dark); letter-spacing: -0.03em;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 em { font-style: italic; font-weight: 300; color: var(--green-mid); }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--text-light);
+      max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--green-deep); color: var(--white);
+      padding: 0.85rem 2rem; border-radius: 8px;
+      font-weight: 600; font-size: 0.95rem; font-family: inherit;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--green-deep);
+      padding: 0.85rem 2rem; border-radius: 8px;
+      font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; border: 1.5px solid var(--green-light);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--green-deep); background: var(--green-pale); }
+
+    /* SECTIONS */
+    .section { padding: 5rem 1.5rem; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.78rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--green-mid); margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Fraunces', serif; font-weight: 700;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: var(--green-dark); letter-spacing: -0.02em;
+      margin-bottom: 1rem; line-height: 1.2;
+    }
+    .section-desc {
+      color: var(--text-light); max-width: 540px;
+      font-size: 1rem; line-height: 1.7;
+    }
+
+    /* ABOUT */
+    .about { background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .about-visual {
+      background: var(--green-pale); border-radius: 16px;
+      aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .about-visual-inner { text-align: center; color: var(--green-mid); }
+    .about-visual svg { width: 120px; height: 120px; opacity: 0.4; }
+    .about-visual-label {
+      font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-top: 0.8rem; color: var(--text-light);
+    }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.2rem; margin-top: 2.2rem;
+    }
+    .stat-card {
+      background: var(--green-pale); border-radius: 10px;
+      padding: 1.2rem 1rem;
+    }
+    .stat-card .num {
+      font-family: 'Fraunces', serif; font-size: 1.5rem;
+      font-weight: 700; color: var(--green-deep); margin-bottom: 0.15rem;
+    }
+    .stat-card .label { font-size: 0.78rem; color: var(--text-light); font-weight: 500; }
+
+    /* DENTIST */
+    .dentist { background: var(--bg); }
+    .dentist-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 4rem; align-items: center;
+    }
+    .dentist-photo {
+      aspect-ratio: 3/4; border-radius: 14px;
+      background: var(--green-pale);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+      border: 1px solid rgba(27,94,59,0.06);
+    }
+    .dentist-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    }
+    .dentist-credentials {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-top: 1.8rem;
+    }
+    .credential {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--white);
+      border: 1px solid var(--green-light);
+      border-radius: 8px;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--green-deep);
+    }
+    .credential svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .dentist-bio {
+      color: var(--text-light); font-size: 0.95rem;
+      line-height: 1.75; margin-top: 1.2rem;
+    }
+    .dentist-bio + .dentist-bio { margin-top: 0.8rem; }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--white); border: 1px solid rgba(27,94,59,0.08);
+      border-radius: 12px; padding: 2rem 1.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      border-color: var(--green-light);
+      box-shadow: 0 4px 20px rgba(13,40,24,0.04);
+    }
+    .service-icon {
+      width: 44px; height: 44px; background: var(--green-pale);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 1.2rem;
+    }
+    .service-icon svg { width: 22px; height: 22px; color: var(--green-deep); }
+    .service-card h3 {
+      font-family: 'Fraunces', serif; font-weight: 700;
+      font-size: 1.15rem; color: var(--green-dark); margin-bottom: 0.5rem;
+    }
+    .service-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+
+    /* LOCATION */
+    .location { background: var(--green-dark); color: var(--white); }
+    .location .section-label { color: var(--sand); }
+    .location .section-title { color: var(--white); }
+    .location .section-desc { color: rgba(255,255,255,0.7); }
+    .location-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; margin-top: 3rem; align-items: start;
+    }
+    .location-details { display: flex; flex-direction: column; gap: 1.8rem; }
+    .loc-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .loc-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(255,255,255,0.08); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .loc-icon svg { width: 18px; height: 18px; color: var(--sand); }
+    .loc-item h4 {
+      font-size: 0.78rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--sand); margin-bottom: 0.25rem;
+    }
+    .loc-item p { color: rgba(255,255,255,0.85); font-size: 0.95rem; }
+    .location-map {
+      border-radius: 12px; overflow: hidden;
+      aspect-ratio: 16/10;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .location-map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.3); }
+
+    /* CONTACT */
+    .contact { background: var(--white); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.2fr;
+      gap: 4rem; align-items: start;
+    }
+    .form-card {
+      background: var(--bg); border-radius: 14px; padding: 2.5rem;
+      border: 1px solid rgba(27,94,59,0.06);
+    }
+    .form-row { margin-bottom: 1.2rem; }
+    .form-row label {
+      display: block; font-size: 0.82rem; font-weight: 600;
+      color: var(--text); margin-bottom: 0.4rem;
+    }
+    .form-row input, .form-row select, .form-row textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1.5px solid var(--green-light); border-radius: 8px;
+      font-family: inherit; font-size: 0.92rem;
+      background: var(--white); color: var(--text);
+      transition: border-color 0.2s; outline: none;
+    }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+      border-color: var(--green-mid);
+    }
+    .form-row textarea { resize: vertical; min-height: 100px; }
+    .form-row-half { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit { width: 100%; margin-top: 0.5rem; }
+    .form-note {
+      text-align: center; font-size: 0.78rem;
+      color: var(--text-light); margin-top: 1rem;
+    }
+    #form-status { text-align: center; margin-top: 1rem; font-weight: 600; font-size: 0.9rem; }
+    #form-status.success { color: var(--green-deep); }
+    #form-status.error { color: #c0392b; }
+
+    /* FOOTER */
+    .footer {
+      background: var(--green-dark); color: rgba(255,255,255,0.5);
+      padding: 2.5rem 1.5rem; text-align: center; font-size: 0.82rem;
+    }
+    .footer-brand {
+      font-family: 'Fraunces', serif; font-weight: 700;
+      font-size: 1.1rem; color: var(--white); margin-bottom: 0.4rem;
+    }
+    .footer a { color: var(--sand); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 200;
+        background: var(--bg);
+        justify-content: center; align-items: center; gap: 2rem;
+        padding: 2rem;
+      }
+      .nav-links.open a {
+        font-size: 1.25rem; color: var(--green-dark); font-weight: 600;
+      }
+      .nav-links.open .nav-cta {
+        margin-top: 0.5rem;
+        padding: 0.75rem 2rem !important;
+        font-size: 1.1rem !important;
+      }
+      .hamburger { display: block; z-index: 210; }
+      .hero { padding: 8rem 1.5rem 4rem; }
+      .about-grid, .dentist-grid, .location-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .dentist-photo { aspect-ratio: 1/1; max-width: 280px; margin: 0 auto; }
+      .services-grid { grid-template-columns: 1fr; }
+      .form-row-half { grid-template-columns: 1fr; }
+      .about-visual { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Garden City <span>Dental</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#location">Location</a>
+      <a href="#contact" class="nav-cta">Book a Visit</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Opening September 2026
+  </div>
+  <div class="hero-logo-placeholder" id="logoPlaceholder">Logo</div>
+  <h1>Your Neighbourhood<br><em>Dental Home</em></h1>
+  <p class="hero-sub">A modern dental practice rooted in Brampton's Garden City neighbourhood &mdash; thoughtful care for every smile, every age.</p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Inquire Now
+    </a>
+    <a href="#services" class="btn-secondary">Our Services</a>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-visual">
+      <div class="about-visual-inner">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M50 15C30 15 15 30 15 45C15 65 35 75 50 90C65 75 85 65 85 45C85 30 70 15 50 15Z"/>
+          <path d="M50 30C55 30 60 35 60 42C60 52 50 58 50 65"/>
+          <path d="M42 45C42 40 45 37 50 37"/>
+          <circle cx="38" cy="55" r="3"/><circle cx="62" cy="55" r="3"/>
+          <path d="M30 68Q50 78 70 68"/>
+        </svg>
+        <div class="about-visual-label">Clinic photo coming soon</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">Built for the Community</h2>
+      <p class="section-desc">Garden City Dental is a brand-new, ground-up dental clinic in the heart of Brampton. We're building a space designed around patient comfort &mdash; with modern technology, a welcoming atmosphere, and a team that treats you like family.</p>
+      <p class="section-desc" style="margin-top: 1rem;">Whether it's your child's first visit or a full smile makeover, we'll be here for every stage.</p>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="num">2026</div>
+          <div class="label">Brand new clinic</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">All Ages</div>
+          <div class="label">Families welcome</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">Modern</div>
+          <div class="label">State-of-the-art tech</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">Direct</div>
+          <div class="label">Insurance billing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">Comprehensive Dental Care</h2>
+    <p class="section-desc">From routine cleanings to advanced restorative work &mdash; everything under one roof.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Preventive Care</h3>
+        <p>Cleanings, exams, fluoride treatments, and sealants to keep your smile healthy from the start.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Whitening, veneers, and bonding &mdash; subtle or dramatic, tailored to the results you want.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Restorative</h3>
+        <p>Fillings, crowns, bridges, and implants &mdash; we restore function and confidence.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Family Dentistry</h3>
+        <p>A comfortable environment for kids, teens, and adults &mdash; your whole family in one place.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3>Digital X-Rays</h3>
+        <p>Low-radiation digital imaging for faster, safer, and more accurate diagnostics.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Emergency Dental</h3>
+        <p>Same-day appointments for toothaches, trauma, and urgent dental needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section location" id="location">
+  <div class="section-inner">
+    <div class="section-label">Find Us</div>
+    <h2 class="section-title">Right in the Heart of Brampton</h2>
+    <p class="section-desc">Conveniently located on Main Street South &mdash; easy to find, easy to reach.</p>
+    <div class="location-grid">
+      <div class="location-details">
+        <div class="loc-item">
+          <div class="loc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Address</h4>
+            <p>16 Main Street South<br>Brampton, Ontario</p>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Opening</h4>
+            <p>September 2026<br>Hours to be announced</p>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <p>Phone number coming soon<br>Use the form below to inquire</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-map">
+        <iframe
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=16+Main+Street+South,Brampton,ON,Canada&zoom=16"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Garden City Dental location"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="section-inner contact-grid">
+    <div>
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">New Patients Welcome</h2>
+      <p class="section-desc">We're accepting inquiries ahead of our September 2026 opening. Send us a note and we'll reach out as soon as we're ready to book.</p>
+      <p class="section-desc" style="margin-top: 1.5rem; font-weight: 500; color: var(--green-deep);">Be among the first to book &mdash; early registrants will get priority scheduling when we open.</p>
+    </div>
+    <div class="form-card">
+      <form id="inquiryForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="New Inquiry — Garden City Dental">
+        <input type="hidden" name="from_name" value="Garden City Dental Website">
+        <input type="checkbox" name="botcheck" style="display:none">
+        <div class="form-row form-row-half">
+          <div>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="first_name" required>
+          </div>
+          <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="last_name" required>
+          </div>
+        </div>
+        <div class="form-row form-row-half">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="interest">I'm Interested In</label>
+          <select id="interest" name="interest">
+            <option value="New Patient Registration">New Patient Registration</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Cosmetic Consultation">Cosmetic Consultation</option>
+            <option value="Family Dentistry">Family Dentistry</option>
+            <option value="Emergency Dental">Emergency Dental</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Message <span style="font-weight:400; color: var(--text-light);">(optional)</span></label>
+          <textarea id="message" name="message" rows="4" placeholder="Anything you'd like us to know..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit">Send Inquiry</button>
+        <div id="form-status"></div>
+        <p class="form-note">We'll respond within 1-2 business days.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section dentist" id="dentist">
+  <div class="section-inner dentist-grid">
+    <div class="dentist-photo">
+      <img src="images/dr-seth.jpg" alt="Dr. Hemant Seth, DDS — Garden City Dental">
+    </div>
+    <div>
+      <div class="section-label">Meet Your Dentist</div>
+      <h2 class="section-title">Dr. Hemant Seth, DDS</h2>
+      <p class="dentist-bio">Dr. Seth brings over 16 years of clinical experience spanning general dentistry, oral surgery, and implantology. After earning his Bachelor of Dental Surgery in 2009, he went on to complete advanced training in implantology &mdash; including a diploma from ADC and a mini-residency through DACE Bengaluru in partnership with the University at Buffalo, NY (Zimmer Biomet).</p>
+      <p class="dentist-bio">Before coming to Canada, Dr. Seth ran a successful private practice and served as Zonal Operational Manager and Senior Consultant overseeing multiple corporate clinics with Clove Dental in India. He was recognized as a Rising Star in Implantology in 2020 and has published numerous clinical case studies in the field.</p>
+      <p class="dentist-bio">Now Canadian DDS-certified and practising in the GTA, Dr. Seth is skilled in oral surgery, complex endodontic treatments, periodontal surgeries, bone grafting, and comprehensive general dentistry.</p>
+      <div class="dentist-credentials">
+        <div class="credential">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          DDS (Canadian Equivalency)
+        </div>
+        <div class="credential">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          16+ Years Experience
+        </div>
+        <div class="credential">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Implant Specialist
+        </div>
+        <div class="credential">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Oral Surgery
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-brand">Garden City Dental</div>
+  <p>16 Main Street South, Brampton, Ontario</p>
+  <p style="margin-top: 0.6rem;">&copy; 2026 Garden City Dental. All rights reserved.</p>
+  <p style="margin-top: 0.4rem;">
+    Clinic by <a href="https://wilksolutions.ca" target="_blank" rel="noopener">Wilk Solutions</a>
+  </p>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+  const form = document.getElementById('inquiryForm');
+  const status = document.getElementById('form-status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Sending...';
+    status.className = '';
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      const data = await res.json();
+      if (data.success) {
+        status.textContent = "Thank you! We'll be in touch soon.";
+        status.className = 'success';
+        form.reset();
+      } else {
+        status.textContent = 'Something went wrong. Please try again.';
+        status.className = 'error';
+      }
+    } catch {
+      status.textContent = 'Network error. Please try again.';
+      status.className = 'error';
+    }
+  });
+</script>
+
+</body>
+</html>
