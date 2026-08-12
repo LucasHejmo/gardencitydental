@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; }
     :root {
       --green-deep: #1B5E3B;
       --green-dark: #0D2818;
@@ -293,13 +294,12 @@
     }
     .loc-item p { color: rgba(255,255,255,0.85); font-size: 0.95rem; }
     .location-map {
-      position: relative;
       border-radius: 12px;
       overflow: hidden;
+      min-height: 100%;
     }
     .location-map iframe {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%; border: 0;
+      width: 100%; height: 100%; min-height: 400px; border: 0; display: block;
     }
 
     /* CONTACT */
@@ -374,10 +374,10 @@
       .hamburger { display: block; z-index: 210; }
       .hero { padding: 8rem 1.5rem 4rem; }
       .about-grid, .dentist-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .location-layout { grid-template-columns: 1fr; }
-      .location-content { padding: 2.5rem 1.5rem 1.5rem; }
-      .location-map { min-height: 300px; aspect-ratio: 4/3; margin: 0 1.5rem 2.5rem; }
-      .location.section { padding: 0; }
+      .location-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+      .location-content { padding: 0; }
+      .location.section { padding: 2.5rem 1.5rem; }
+      .location-map iframe { min-height: 300px; }
       .dentist-photo { aspect-ratio: 1/1; max-width: 280px; margin: 0 auto; }
       .services-grid { grid-template-columns: 1fr; }
       .form-row-half { grid-template-columns: 1fr; }
