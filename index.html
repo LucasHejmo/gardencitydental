@@ -553,7 +553,7 @@
     </div>
     <div class="form-card">
       <form id="inquiryForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="90a80fc0-0100-4128-ae30-d63fd8675696">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
         <input type="hidden" name="subject" value="New Inquiry - Garden Square Family Dentistry">
         <input type="hidden" name="from_name" value="Garden Square Family Dentistry Website">
         <input type="checkbox" name="botcheck" style="display:none">
@@ -668,8 +668,7 @@
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        body: new FormData(form)
       });
       const data = await res.json();
       if (data.success) {
@@ -677,7 +676,7 @@
         status.className = 'success';
         form.reset();
       } else {
-        status.textContent = 'Something went wrong. Please try again.';
+        status.textContent = data.message || 'Something went wrong. Please try again.';
         status.className = 'error';
       }
     } catch {
