@@ -302,13 +302,6 @@
       width: 100%; height: 100%; border: 0;
     }
 
-    @media (max-width: 768px) {
-      .location-map {
-        aspect-ratio: 4/3;
-        min-height: 300px;
-      }
-    }
-
     /* CONTACT */
     .contact { background: var(--white); }
     .contact-grid {
@@ -382,8 +375,9 @@
       .hero { padding: 8rem 1.5rem 4rem; }
       .about-grid, .dentist-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       .location-layout { grid-template-columns: 1fr; }
-      .location-content { padding: 3rem 1.5rem; }
-      .location-map { min-height: 300px; }
+      .location-content { padding: 2.5rem 1.5rem 1.5rem; }
+      .location-map { min-height: 300px; aspect-ratio: 4/3; margin: 0 1.5rem 2.5rem; }
+      .location.section { padding: 0; }
       .dentist-photo { aspect-ratio: 1/1; max-width: 280px; margin: 0 auto; }
       .services-grid { grid-template-columns: 1fr; }
       .form-row-half { grid-template-columns: 1fr; }
