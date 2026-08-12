@@ -175,17 +175,14 @@
       gap: 4rem; align-items: center;
     }
     .about-visual {
-      background: var(--green-pale); border-radius: 16px;
+      border-radius: 16px;
       aspect-ratio: 4/3;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
+      overflow: hidden;
+      position: relative;
     }
-    .about-visual-inner { text-align: center; color: var(--green-mid); }
-    .about-visual svg { width: 120px; height: 120px; opacity: 0.4; }
-    .about-visual-label {
-      font-size: 0.75rem; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.08em;
-      margin-top: 0.8rem; color: var(--text-light);
+    .about-visual img {
+      width: 100%; height: 100%; object-fit: cover;
+      border-radius: 16px;
     }
     .about-stats {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -264,15 +261,22 @@
     .service-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
 
     /* LOCATION */
-    .location { background: var(--green-dark); color: var(--white); }
+    .location { background: var(--green-dark); color: var(--white); padding: 0; overflow: hidden; }
     .location .section-label { color: var(--sand); }
     .location .section-title { color: var(--white); }
     .location .section-desc { color: rgba(255,255,255,0.7); }
-    .location-grid {
+    .location-layout {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; margin-top: 3rem; align-items: stretch;
+      max-width: 1120px; margin: 0 auto;
     }
-    .location-details { display: flex; flex-direction: column; gap: 1.8rem; justify-content: center; }
+    .location-content {
+      padding: 5rem 3rem 5rem 1.5rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .location-details {
+      display: flex; flex-direction: column; gap: 1.8rem;
+      margin-top: 2.5rem;
+    }
     .loc-item { display: flex; gap: 1rem; align-items: flex-start; }
     .loc-icon {
       width: 40px; height: 40px; flex-shrink: 0;
@@ -287,12 +291,14 @@
     }
     .loc-item p { color: rgba(255,255,255,0.85); font-size: 0.95rem; }
     .location-map {
-      border-radius: 12px; overflow: hidden;
-      min-height: 320px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      min-height: 480px;
     }
-    .location-map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.3); display: block; }
+    .location-map iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: 0;
+      filter: grayscale(0.2);
+    }
 
     /* CONTACT */
     .contact { background: var(--white); }
@@ -365,7 +371,10 @@
       }
       .hamburger { display: block; z-index: 210; }
       .hero { padding: 8rem 1.5rem 4rem; }
-      .about-grid, .dentist-grid, .location-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-grid, .dentist-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .location-layout { grid-template-columns: 1fr; }
+      .location-content { padding: 3rem 1.5rem; }
+      .location-map { min-height: 300px; }
       .dentist-photo { aspect-ratio: 1/1; max-width: 280px; margin: 0 auto; }
       .services-grid { grid-template-columns: 1fr; }
       .form-row-half { grid-template-columns: 1fr; }
@@ -406,16 +415,7 @@
 <section class="section about" id="about">
   <div class="section-inner about-grid">
     <div class="about-visual">
-      <div class="about-visual-inner">
-        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
-          <path d="M50 15C30 15 15 30 15 45C15 65 35 75 50 90C65 75 85 65 85 45C85 30 70 15 50 15Z"/>
-          <path d="M50 30C55 30 60 35 60 42C60 52 50 58 50 65"/>
-          <path d="M42 45C42 40 45 37 50 37"/>
-          <circle cx="38" cy="55" r="3"/><circle cx="62" cy="55" r="3"/>
-          <path d="M30 68Q50 78 70 68"/>
-        </svg>
-        <div class="about-visual-label">Clinic photo coming soon</div>
-      </div>
+      <img src="images/storefront.png" alt="Garden Square Family Dentistry storefront illustration">
     </div>
     <div>
       <div class="section-label">About Us</div>
@@ -497,11 +497,11 @@
 </section>
 
 <section class="section location" id="location">
-  <div class="section-inner">
-    <div class="section-label">Find Us</div>
-    <h2 class="section-title">Right in the Heart of Brampton</h2>
-    <p class="section-desc">Conveniently located on Main Street South. Easy to find, easy to reach.</p>
-    <div class="location-grid">
+  <div class="location-layout">
+    <div class="location-content">
+      <div class="section-label">Find Us</div>
+      <h2 class="section-title">Right in the Heart of Brampton</h2>
+      <p class="section-desc">Conveniently located on Main Street South. Easy to find, easy to reach.</p>
       <div class="location-details">
         <div class="loc-item">
           <div class="loc-icon">
@@ -531,12 +531,12 @@
           </div>
         </div>
       </div>
-      <div class="location-map">
-        <iframe
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=16+Main+Street+South,Brampton,ON,Canada&zoom=16"
-          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Garden Square Family Dentistry location"></iframe>
-      </div>
+    </div>
+    <div class="location-map">
+      <iframe
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=16+Main+Street+South,Brampton,ON,Canada&zoom=16"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Garden Square Family Dentistry location"></iframe>
     </div>
   </div>
 </section>
