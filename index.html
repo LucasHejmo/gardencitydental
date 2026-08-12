@@ -302,6 +302,13 @@
       width: 100%; height: 100%; border: 0;
     }
 
+    @media (max-width: 768px) {
+      .location-map {
+        aspect-ratio: 4/3;
+        min-height: 300px;
+      }
+    }
+
     /* CONTACT */
     .contact { background: var(--white); }
     .contact-grid {
@@ -553,7 +560,7 @@
     </div>
     <div class="form-card">
       <form id="inquiryForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+        <input type="hidden" name="access_key" value="b5e4b0f8-1d61-40ca-8b70-3351ad9c95c6">
         <input type="hidden" name="subject" value="New Inquiry - Garden Square Family Dentistry">
         <input type="hidden" name="from_name" value="Garden Square Family Dentistry Website">
         <input type="checkbox" name="botcheck" style="display:none">
@@ -668,7 +675,8 @@
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: new FormData(form)
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
       });
       const data = await res.json();
       if (data.success) {
