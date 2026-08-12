@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Garden City Dental | Opening September 2026 — Brampton</title>
-  <meta name="description" content="Garden City Dental is opening September 2026 at 16 Main Street S, Brampton. New patients welcome — inquire today.">
+  <title>Garden Square Family Dentistry | Opening September 2026 — Brampton</title>
+  <meta name="description" content="Garden Square Family Dentistry is opening September 2026 at 16 Main Street S, Brampton. New patients welcome — inquire today.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,12 +45,10 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-brand {
-      font-family: 'Fraunces', serif;
-      font-weight: 700; font-size: 1.15rem;
-      color: var(--green-deep); text-decoration: none;
-      letter-spacing: -0.02em;
+      display: flex; align-items: center;
+      text-decoration: none;
     }
-    .nav-brand span { color: var(--green-mid); font-weight: 500; }
+    .nav-brand img { height: 40px; width: auto; }
     .nav-links { display: flex; gap: 2rem; align-items: center; }
     .nav-links a {
       text-decoration: none; color: var(--text-light);
@@ -113,14 +111,11 @@
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(1.4); }
     }
-    .hero-logo-placeholder {
-      width: 90px; height: 90px; margin: 0 auto 1.8rem;
-      border-radius: 20px; background: var(--white);
-      border: 2px dashed var(--green-light);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--text-light); font-size: 0.7rem; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.08em;
+    .hero-logo {
+      max-width: 320px; width: 80%;
+      margin: 0 auto 1.8rem;
     }
+    .hero-logo img { width: 100%; height: auto; }
     .hero h1 {
       font-family: 'Fraunces', serif; font-weight: 700;
       font-size: clamp(2.4rem, 5.5vw, 3.8rem); line-height: 1.1;
@@ -380,7 +375,7 @@
 
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-brand">Garden City <span>Dental</span></a>
+    <a href="#" class="nav-brand"><img src="images/logo.png" alt="Garden Square Family Dentistry"></a>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -398,9 +393,9 @@
     <span class="dot"></span>
     Opening September 2026
   </div>
-  <div class="hero-logo-placeholder" id="logoPlaceholder">Logo</div>
+  <div class="hero-logo"><img src="images/logo.png" alt="Garden Square Family Dentistry"></div>
   <h1>Your Neighbourhood<br><em>Dental Home</em></h1>
-  <p class="hero-sub">A modern dental practice rooted in Brampton's Garden City neighbourhood &mdash; thoughtful care for every smile, every age.</p>
+  <p class="hero-sub">A modern dental practice rooted in Brampton's Garden Square neighbourhood &mdash; thoughtful care for every smile, every age.</p>
   <div class="hero-actions">
     <a href="#contact" class="btn-primary">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -427,7 +422,7 @@
     <div>
       <div class="section-label">About Us</div>
       <h2 class="section-title">Built for the Community</h2>
-      <p class="section-desc">Garden City Dental is a brand-new, ground-up dental clinic in the heart of Brampton. We're building a space designed around patient comfort &mdash; with modern technology, a welcoming atmosphere, and a team that treats you like family.</p>
+      <p class="section-desc">Garden Square Family Dentistry is a brand-new, ground-up dental clinic in the heart of Brampton. We're building a space designed around patient comfort &mdash; with modern technology, a welcoming atmosphere, and a team that treats you like family.</p>
       <p class="section-desc" style="margin-top: 1rem;">Whether it's your child's first visit or a full smile makeover, we'll be here for every stage.</p>
       <div class="about-stats">
         <div class="stat-card">
@@ -542,7 +537,7 @@
         <iframe
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=16+Main+Street+South,Brampton,ON,Canada&zoom=16"
           allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Garden City Dental location"></iframe>
+          title="Garden Square Family Dentistry location"></iframe>
       </div>
     </div>
   </div>
@@ -559,8 +554,8 @@
     <div class="form-card">
       <form id="inquiryForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-        <input type="hidden" name="subject" value="New Inquiry — Garden City Dental">
-        <input type="hidden" name="from_name" value="Garden City Dental Website">
+        <input type="hidden" name="subject" value="New Inquiry — Garden Square Family Dentistry">
+        <input type="hidden" name="from_name" value="Garden Square Family Dentistry Website">
         <input type="checkbox" name="botcheck" style="display:none">
         <div class="form-row form-row-half">
           <div>
@@ -608,7 +603,7 @@
 <section class="section dentist" id="dentist">
   <div class="section-inner dentist-grid">
     <div class="dentist-photo">
-      <img src="images/dr-seth.jpg" alt="Dr. Hemant Seth, DDS — Garden City Dental">
+      <img src="images/dr-seth.jpg" alt="Dr. Hemant Seth, DDS — Garden Square Family Dentistry">
     </div>
     <div>
       <div class="section-label">Meet Your Dentist</div>
@@ -639,9 +634,9 @@
 </section>
 
 <footer class="footer">
-  <div class="footer-brand">Garden City Dental</div>
+  <div class="footer-brand">Garden Square Family Dentistry</div>
   <p>16 Main Street South, Brampton, Ontario</p>
-  <p style="margin-top: 0.6rem;">&copy; 2026 Garden City Dental. All rights reserved.</p>
+  <p style="margin-top: 0.6rem;">&copy; 2026 Garden Square Family Dentistry. All rights reserved.</p>
   <p style="margin-top: 0.4rem;">
     Clinic by <a href="https://wilksolutions.ca" target="_blank" rel="noopener">Wilk Solutions</a>
   </p>
