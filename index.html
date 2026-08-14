@@ -5,6 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garden Square Family Dentistry | Opening September 2026 - Brampton</title>
   <meta name="description" content="Garden Square Family Dentistry is opening September 2026 at 16 Main Street S, Brampton. New patients welcome - inquire today.">
+  <meta name="keywords" content="dentist Brampton, family dentistry, dental clinic Brampton, Garden Square dentist, new dental office, Dr Hemant Seth, dental implants Brampton">
+  <meta name="author" content="Garden Square Family Dentistry">
+  <link rel="canonical" href="https://gardensquarefamilydentistry.ca/">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1B5E3B">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gardensquarefamilydentistry.ca/">
+  <meta property="og:title" content="Garden Square Family Dentistry | Opening September 2026">
+  <meta property="og:description" content="A modern dental practice in the heart of Brampton. New patients welcome. Inquire today.">
+  <meta property="og:image" content="https://gardensquarefamilydentistry.ca/images/og-image.jpg">
+  <meta property="og:locale" content="en_CA">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Garden Square Family Dentistry | Opening September 2026">
+  <meta name="twitter:description" content="A modern dental practice in the heart of Brampton. New patients welcome. Inquire today.">
+  <meta name="twitter:image" content="https://gardensquarefamilydentistry.ca/images/og-image.jpg">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -530,7 +557,7 @@
           </div>
           <div>
             <h4>Contact</h4>
-            <p>Phone number coming soon<br>Use the form below to inquire</p>
+            <p><a href="tel:+16473859988" style="color: rgba(255,255,255,0.85); text-decoration: none;">(647) 385-9988</a><br><a href="mailto:gardensquarefamilydentistry@gmail.com" style="color: rgba(255,255,255,0.85); text-decoration: none;">gardensquarefamilydentistry@gmail.com</a></p>
           </div>
         </div>
       </div>
@@ -669,10 +696,11 @@
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        body: new FormData(form)
       });
+      console.log('Response status:', res.status, res.statusText);
       const data = await res.json();
+      console.log('Response data:', data);
       if (data.success) {
         status.textContent = "Thank you! We'll be in touch soon.";
         status.className = 'success';
@@ -681,7 +709,8 @@
         status.textContent = data.message || 'Something went wrong. Please try again.';
         status.className = 'error';
       }
-    } catch {
+    } catch (err) {
+      console.error('Form error:', err);
       status.textContent = 'Network error. Please try again.';
       status.className = 'error';
     }
