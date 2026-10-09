@@ -100,7 +100,8 @@ section{padding-block:clamp(3rem,7vw,5.5rem)}
 
 .split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 .split>*{min-width:0}
-.split.solo{grid-template-columns:1fr;max-width:760px}
+.split.solo{grid-template-columns:1fr}
+.split.solo>*{max-width:760px}
 @media (max-width:860px){.split{grid-template-columns:1fr}}
 .checks{list-style:none;padding:0;margin:0;display:grid;gap:1rem}
 .checks li{display:grid;grid-template-columns:28px 1fr;gap:.8rem}
