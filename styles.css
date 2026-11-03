@@ -225,7 +225,8 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:3r
 .cdcp-head h2{font-family:var(--body);font-weight:800;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;line-height:1;display:grid;gap:.1rem}
 .cdcp-big{font-size:clamp(3.4rem,13vw,4.6rem);color:var(--cdcp-light);letter-spacing:.02em;line-height:.95}
 .cdcp-head p{font-size:.95rem;opacity:.9;margin-top:.35rem}
-.cdcp-mark{width:118px;height:118px;color:var(--cdcp-light);flex:none}
+.cdcp-mark{width:118px;height:118px;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(207,230,184,.25);display:grid;place-items:center;flex:none}
+.cdcp-mark img{width:72%;height:auto}
 .cdcp-body{padding:1.5rem 1.8rem 1.8rem;display:grid;gap:1rem}
 .cdcp-body h3{font-family:var(--body);font-weight:700;font-size:1.2rem;color:var(--spruce)}
 .cdcp-body>p{color:var(--muted);margin-top:-.5rem}
