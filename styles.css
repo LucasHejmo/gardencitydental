@@ -213,3 +213,38 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:3r
 .topbar a{text-decoration:none}
 .hp{position:absolute;left:-9999px}
 .ok.err{background:#FBEDEA}
+
+/* CDCP popup (home page) */
+.cdcp{--cdcp-light:#CFE6B8;width:min(560px,calc(100% - 32px));max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:20px;background:var(--surface);color:var(--ink);box-shadow:0 30px 80px -20px rgba(20,40,25,.45);overflow:auto}
+.cdcp::backdrop{background:rgba(23,32,24,.55);backdrop-filter:blur(2px)}
+.cdcp-close{position:absolute;top:10px;right:12px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;z-index:1}
+.cdcp-close:hover{background:rgba(255,255,255,.28)}
+.cdcp-top{background:var(--spruce);color:#fff;display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem;padding:1.8rem 1.8rem 1.6rem}
+.cdcp-head{display:grid;gap:.2rem;min-width:0}
+.cdcp-kicker{font-weight:700;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase}
+.cdcp-head h2{font-family:var(--body);font-weight:800;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;line-height:1;display:grid;gap:.1rem}
+.cdcp-big{font-size:clamp(3.4rem,13vw,4.6rem);color:var(--cdcp-light);letter-spacing:.02em;line-height:.95}
+.cdcp-head p{font-size:.95rem;opacity:.9;margin-top:.35rem}
+.cdcp-mark{width:118px;height:118px;color:var(--cdcp-light);flex:none}
+.cdcp-body{padding:1.5rem 1.8rem 1.8rem;display:grid;gap:1rem}
+.cdcp-body h3{font-family:var(--body);font-weight:700;font-size:1.2rem;color:var(--spruce)}
+.cdcp-body>p{color:var(--muted);margin-top:-.5rem}
+.cdcp-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.2rem}
+.cdcp-list li{display:flex;gap:.7rem;align-items:flex-start;min-width:0}
+.cdcp-ic{width:42px;height:42px;border-radius:50%;background:#E4F0DA;display:grid;place-items:center;flex:none}
+.cdcp-ic svg,.cdcp-elig svg{width:22px;height:22px;fill:none;stroke:var(--spruce);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cdcp-list strong{display:block;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--spruce)}
+.cdcp-list span{font-size:.88rem;color:var(--muted);line-height:1.4}
+.cdcp-elig{display:flex;gap:.9rem;align-items:center;background:#EEF5E8;border-radius:12px;padding:.9rem 1rem}
+.cdcp-elig svg{width:34px;height:34px;flex:none}
+.cdcp-elig strong{display:block;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--spruce)}
+.cdcp-elig span{font-size:.88rem;color:var(--muted);line-height:1.4}
+.cdcp-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.2rem}
+@media (max-width:520px){
+  .cdcp-top{padding:1.5rem 1.3rem 1.3rem}.cdcp-body{padding:1.3rem}
+  .cdcp-mark{width:84px;height:84px}
+  .cdcp-list{grid-template-columns:1fr}
+  .cdcp-actions .btn{flex:1 1 100%;justify-content:center}
+}
+@media (prefers-reduced-motion:no-preference){.cdcp[open]{animation:cdcpIn .35s ease}@keyframes cdcpIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}}
+.cdcp-head h2:focus{outline:none}

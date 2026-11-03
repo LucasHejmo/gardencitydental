@@ -25,3 +25,16 @@
       });
   });
 })();
+
+// CDCP popup: shows on the home page once, then stays hidden for 7 days after it's closed
+(function(){
+  var d=document.getElementById("cdcpPopup"); if(!d||typeof d.showModal!=="function") return;
+  var KEY="gsfd_cdcp_closed", WEEK=7*24*60*60*1000;
+  try{ var t=+localStorage.getItem(KEY); if(t && Date.now()-t<WEEK) return; }catch(e){}
+  function remember(){ try{ localStorage.setItem(KEY,String(Date.now())); }catch(e){} }
+  d.addEventListener("close",remember);
+  d.addEventListener("click",function(e){ if(e.target===d) d.close(); });
+  d.querySelectorAll("[data-cdcp-close]").forEach(function(b){ b.addEventListener("click",function(){ d.close(); }); });
+  d.querySelectorAll("[data-cdcp-dismiss]").forEach(function(a){ a.addEventListener("click",remember); });
+  setTimeout(function(){ d.showModal(); },1200);
+})();
