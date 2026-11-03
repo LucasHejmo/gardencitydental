@@ -26,15 +26,18 @@
   });
 })();
 
-// CDCP popup: shows on the home page once, then stays hidden for 7 days after it's closed
+// CDCP notice: shows on every visit to the home page.
+// Desktop gets the popup; phones get a small bottom bar that opens it (Google penalizes full-screen popups on mobile).
 (function(){
-  var d=document.getElementById("cdcpPopup"); if(!d||typeof d.showModal!=="function") return;
-  var KEY="gsfd_cdcp_closed", WEEK=7*24*60*60*1000;
-  try{ var t=+localStorage.getItem(KEY); if(t && Date.now()-t<WEEK) return; }catch(e){}
-  function remember(){ try{ localStorage.setItem(KEY,String(Date.now())); }catch(e){} }
-  d.addEventListener("close",remember);
+  var d=document.getElementById("cdcpPopup"), bar=document.getElementById("cdcpBar");
+  if(!d||typeof d.showModal!=="function") return;
+  function hideBar(){ if(bar) bar.hidden=true; }
   d.addEventListener("click",function(e){ if(e.target===d) d.close(); });
   d.querySelectorAll("[data-cdcp-close]").forEach(function(b){ b.addEventListener("click",function(){ d.close(); }); });
-  d.querySelectorAll("[data-cdcp-dismiss]").forEach(function(a){ a.addEventListener("click",remember); });
-  setTimeout(function(){ d.showModal(); },1200);
+  if(bar){
+    bar.querySelector("[data-cdcp-open]").addEventListener("click",function(){ hideBar(); d.showModal(); });
+    bar.querySelector("[data-cdcp-bar-close]").addEventListener("click",hideBar);
+  }
+  var phone=window.matchMedia("(max-width: 640px)").matches;
+  setTimeout(function(){ if(phone && bar) bar.hidden=false; else d.showModal(); }, phone?600:1200);
 })();

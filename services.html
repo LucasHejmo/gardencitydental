@@ -47,7 +47,7 @@
     "https://gardensquarefamilydentistry.ca/images/og-image.jpg",
     "https://gardensquarefamilydentistry.ca/images/hero.jpg"
    ],
-   "description": "Family, cosmetic and implant dentistry in downtown Brampton, Ontario. Direct insurance billing, open 7 days a week, same-day emergency appointments.",
+   "description": "Family, cosmetic and implant dentistry in downtown Brampton, Ontario. Now accepting Canadian Dental Care Plan (CDCP) patients. Direct insurance billing, evening and Saturday hours, same-day emergency appointments.",
    "telephone": "+1-365-230-9200",
    "email": "info@gardensquarefamilydentistry.com",
    "address": {
@@ -55,7 +55,8 @@
     "streetAddress": "16 Main Street South",
     "addressLocality": "Brampton",
     "addressRegion": "ON",
-    "addressCountry": "CA"
+    "addressCountry": "CA",
+    "postalCode": "L6W 2C3"
    },
    "areaServed": [
     {
@@ -73,7 +74,7 @@
    ],
    "priceRange": "$$",
    "currenciesAccepted": "CAD",
-   "paymentAccepted": "Cash, Debit, Credit Card, Insurance",
+   "paymentAccepted": "Cash, Debit, Credit Card, Insurance, Canadian Dental Care Plan (CDCP)",
    "founder": {
     "@id": "https://gardensquarefamilydentistry.ca/about#dr-hemant-seth"
    },
@@ -137,7 +138,28 @@
      "@type": "MedicalProcedure",
      "name": "Bone grafting"
     }
-   ]
+   ],
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+     ],
+     "opens": "10:00",
+     "closes": "19:00"
+    },
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": "Saturday",
+     "opens": "10:00",
+     "closes": "15:00"
+    }
+   ],
+   "hasMap": "https://www.google.com/maps/search/?api=1&query=16+Main+St+S+Brampton+ON+L6W+2C3"
   },
   {
    "@type": "BreadcrumbList",
@@ -163,8 +185,8 @@
 <body>
 <header class="site">
   <div class="topbar"><div class="wrap">
-    <span>New clinic in downtown Brampton · Now welcoming new patients</span>
-    <span>Open 7 days a week · <a href="tel:+13652309200">(365) 230-9200</a></span>
+    <span>Now welcoming new patients · <a href="/cdcp">CDCP accepted</a></span>
+    <span>Mon to Sat · <a href="tel:+13652309200">(365) 230-9200</a></span>
   </div></div>
   <div class="wrap nav">
     <a class="brand" href="/">
@@ -210,7 +232,7 @@
         <div><h3>Crowns &amp; bridges</h3><p>Durable restorations matched to your natural shade.</p></div>
         <div><h3>Root canal therapy</h3><p>Including complex cases, to remove infection and save the tooth.</p></div>
         <div><h3>Extractions &amp; oral surgery</h3><p>Simple and surgical extractions, including wisdom teeth.</p></div>
-        <div><h3>Dental implants</h3><p>Single-tooth to multi-tooth implant restorations.</p></div>
+        <div><h3><a href="/dental-implants">Dental implants</a></h3><p>Single-tooth to multi-tooth implant restorations.</p></div>
         <div><h3>Bone grafting</h3><p>Rebuilds jawbone so implants have a strong foundation.</p></div>
       </div>
     </div>
@@ -221,6 +243,7 @@
         <div><h3>Teeth whitening</h3><p>Professional whitening for a brighter, even smile.</p></div>
         <div><h3>Veneers</h3><p>Thin custom shells that reshape and brighten front teeth.</p></div>
         <div><h3>Bonding</h3><p>Repairs chips, gaps and uneven edges in a single visit.</p></div>
+        <div><h3>Clear aligners</h3><p>Invisalign and other clear aligners to straighten teeth without braces.</p></div>
         <div><h3>Smile makeovers</h3><p>A combined plan to transform the look of your smile.</p></div>
       </div>
     </div>
@@ -230,7 +253,7 @@
       <div class="svc-list">
         <div><h3>Children's dentistry</h3><p>Gentle first visits that help kids feel at ease.</p></div>
         <div><h3>Teens &amp; adults</h3><p>Ongoing care that adapts as your needs change.</p></div>
-        <div><h3>Emergency dental</h3><p>Same-day appointments for toothaches, trauma and urgent needs.</p></div>
+        <div><h3><a href="/emergency-dentist">Emergency dental</a></h3><p>Same-day appointments for toothaches, trauma and urgent needs.</p></div>
         <div><h3>Seniors</h3><p>Comfortable care for aging teeth, gums and restorations.</p></div>
       </div>
     </div>
@@ -249,8 +272,13 @@
         <li><strong>Healing</strong><span>Over a few months the implant fuses with your jawbone.</span></li>
         <li><strong>Final crown</strong><span>A custom crown or bridge is attached and colour-matched.</span></li>
       </ol>
-      <div><a class="btn btn-primary" href="/contact">Book an implant consultation</a></div>
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem"><a class="btn btn-primary" href="/contact">Book an implant consultation</a><a class="btn btn-ghost" href="/dental-implants">More about implants</a></div>
     </div>
+  </div></section>
+
+  <section class="band"><div class="wrap band-grid">
+    <div><span class="eyebrow">Canadian Dental Care Plan</span><h2>Now accepting CDCP patients</h2><p class="lede">We help eligible patients understand their coverage and bill the plan directly.</p></div>
+    <a class="btn btn-primary" href="/cdcp">CDCP at Garden Square</a>
   </div></section>
 </main>
 
@@ -260,13 +288,14 @@
       <span class="foot-logo"><img src="/images/logo.png" width="900" height="222" alt="Garden Square Family Dentistry" loading="lazy"></span>
       <p>Family, cosmetic and implant dentistry in downtown Brampton.</p>
     </div>
-    <div><h4>Visit</h4><ul><li>16 Main Street South</li><li>Brampton, ON</li><li>(365) 230-9200</li></ul></div>
+    <div><h4>Visit</h4><ul><li>16 Main Street South</li><li>Brampton, ON L6W 2C3</li><li>(365) 230-9200</li></ul></div>
     <div><h4>Explore</h4><ul>
-      <li><a href="/services">Services</a></li><li><a href="/about">About us</a></li>
-      <li><a href="/new-patients">New patients</a></li><li><a href="/contact">Contact</a></li></ul></div>
-    <div><h4>Hours</h4><ul><li>Open 7 days a week</li><li>Same-day emergencies</li></ul></div>
+      <li><a href="/services">Services</a></li><li><a href="/dental-implants">Dental implants</a></li>
+      <li><a href="/emergency-dentist">Emergency dentist</a></li><li><a href="/cdcp">CDCP patients</a></li>
+      <li><a href="/about">About us</a></li><li><a href="/new-patients">New patients</a></li><li><a href="/contact">Contact</a></li></ul></div>
+    <div><h4>Hours</h4><ul><li>Mon to Fri: 10 a.m. to 7 p.m.</li><li>Saturday: 10 a.m. to 3 p.m.</li><li>Sunday: Closed</li></ul></div>
   </div>
-  <div class="legal"><span>© 2026 Garden Square Family Dentistry. All rights reserved.</span><span>Privacy policy · Accessibility (AODA)</span></div>
+  <div class="legal"><span>© 2026 Garden Square Family Dentistry. All rights reserved.</span><span><a href="/privacy-policy">Privacy policy</a> · <a href="/privacy-policy#accessibility">Accessibility</a></span></div>
 </div></footer>
 
 <script src="/script.js" defer></script>

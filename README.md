@@ -8,6 +8,10 @@ Static site. No build step. Upload the contents of this folder to the root of th
 - `/about` about.html
 - `/new-patients` new-patients.html
 - `/contact` contact.html
+- `/cdcp` cdcp.html
+- `/dental-implants` dental-implants.html
+- `/emergency-dentist` emergency-dentist.html
+- `/privacy-policy` privacy-policy.html
 - 404.html is shown for missing pages (Cloudflare Workers static assets and GitHub Pages both pick it up)
 
 ## SEO included
@@ -26,7 +30,6 @@ Static site. No build step. Upload the contents of this folder to the root of th
 5. Test the structured data at https://search.google.com/test/rich-results
 
 ## To update
-- Add the postal code to the address in each page's JSON-LD block and on the Contact page once confirmed.
-- Add opening hours to the JSON-LD (`openingHoursSpecification`) once set.
+- Hours and address live in each page's JSON-LD block, the footer, and the Contact page. Update all three if they change.
 - If the domain is different, find and replace `https://gardensquarefamilydentistry.ca` in all files.
 - The form posts to Web3Forms with the existing access key.
